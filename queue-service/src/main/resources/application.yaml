@@ -1,0 +1,37 @@
+server:
+  port: 8084
+  servlet:
+    context-path: /queue-service/
+
+spring:
+  application:
+    name: queue-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.yaml
+
+custom:
+  log:
+    name: queue-service

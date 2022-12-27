@@ -1,0 +1,37 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /shop-service/
+
+spring:
+  application:
+    name: shop-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.yaml
+
+custom:
+  log:
+    name: shop-service

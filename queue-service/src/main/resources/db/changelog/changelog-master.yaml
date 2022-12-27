@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: queue-1
+      author: lakshitha
+  - include:
+      file: data/create-queue-service-tables.sql
+      relativeToChangelogFile: true
+
+  - changeSet:
+      id: queue-2
+      author: lakshitha
+  - include:
+      file: data/insert-queue-service-data.sql
+      relativeToChangelogFile: true

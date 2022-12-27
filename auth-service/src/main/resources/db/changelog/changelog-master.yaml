@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: auth-1
+      author: lakshitha
+  - include:
+      file: data/create-auth-service-tables.sql
+      relativeToChangelogFile: true
+
+  - changeSet:
+      id: auth-2
+      author: lakshitha
+  - include:
+      file: data/insert-auth-service-data.sql
+      relativeToChangelogFile: true
+
+  - changeSet:
+      id: auth-3
+      author: lakshitha
+  - include:
+      file: data/update-auth-service-data.sql
+      relativeToChangelogFile: true

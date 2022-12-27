@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: shop-1
+      author: lakshitha
+  - include:
+      file: data/create-shop-service-tables.sql
+      relativeToChangelogFile: true
+
+  - changeSet:
+      id: shop-2
+      author: lakshitha
+  - include:
+      file: data/insert-shop-service-data.sql
+      relativeToChangelogFile: true

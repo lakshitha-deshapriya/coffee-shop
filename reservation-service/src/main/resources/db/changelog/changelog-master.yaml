@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: reservation-1
+      author: lakshitha
+  - include:
+      file: data/create-reservation-service-tables.sql
+      relativeToChangelogFile: true
+
+  - changeSet:
+      id: reservation-2
+      author: lakshitha
+  - include:
+      file: data/insert-reservation-service-data.sql
+      relativeToChangelogFile: true
